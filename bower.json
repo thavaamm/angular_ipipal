@@ -1,0 +1,27 @@
+{
+  "name": "ipipal",
+  "version": "0.0.1",
+  "authors": [
+    "Thavaprakash"
+  ],
+  "description": "Sample Angular APP",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.1.1",
+    "angular-route": "1.4.x",
+    "ng-resource": "~0.0.2",
+    "angular-resource": "~1.4.9",
+    "lodash": "~4.0.1"
+  }
+}
