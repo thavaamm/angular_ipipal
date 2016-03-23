@@ -25,16 +25,6 @@ header, nav, section, article, footer
 </header>
 <ng-view></ng-view> 
 
-<!--
-<section>
-    <div style="height:475px" id="container">
-    <canvas id="canvas">
-    Your browser does not support HTML5 canvas.
-    </canvas>
-    </div>
-</section>
--->
-
 <footer>
 <p>&copy; 2016.</p>
 </footer>
@@ -43,23 +33,9 @@ header, nav, section, article, footer
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
-<!-- <script src="js/canvas.js"></script> -->
 <script src="js/app.js"></script>
 <script src="js/controllers/ItemController.js"></script>
 <script src="js/services/Items.js"></script>
-<!-- <script>
-var canvas = document.querySelector('canvas');
-fitToContainer(canvas);
-
-function fitToContainer(canvas){
-  // Make it visually fill the positioned parent
-  canvas.style.width ='100%';
-  canvas.style.height='100%';
-  // ...then set the internal size to match
-  canvas.width  = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
-}
-</script> -->
 
 </body>
 </html>

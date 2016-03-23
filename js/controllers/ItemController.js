@@ -17,13 +17,11 @@ ipipalApp.controller('ItemController',
         var isDrag = false;
         var mx, my; // mouse coordinates
 
-        init();
 
         function showResult(){
-
-          console.log(items)
+          $scope.items = items.items;
+          init();
          // $scope.bizzes = allBizzess.organizations;  //ajax request to fetch data into $scope.data
-
         }
 
 
@@ -110,11 +108,12 @@ ipipalApp.controller('ItemController',
 	  
 	  // add custom initialization here:
 	  
-	  // add an orange rectangle
-	  addRect(200, 200, 40, 40, '#FFC02B');
-	  
-	  // add a smaller blue rectangle
-	  addRect(25, 25, 40, 40, '#2BB8FF');
+	  // add rectangle from input json , it could be from api 
+          for(var i=0;i<$scope.items.length;i++){
+                addRect($scope.items[i].x, $scope.items[i].y, $scope.items[i].width, $scope.items[i].height,$scope.items[i].color);
+          }
+
+
 	}
 
 	//wipes the canvas context
@@ -139,7 +138,6 @@ ipipalApp.controller('ItemController',
 	    // draw selection
 	    // right now this is just a stroke along the edge of the selected box
 	    if (mySel != null) {
-		console.log("calling2 draw");
 	      ctx.strokeStyle = mySelColor;
 	      ctx.lineWidth = mySelWidth;
 	      ctx.strokeRect(mySel.x,mySel.y,mySel.w,mySel.h);
@@ -156,7 +154,6 @@ ipipalApp.controller('ItemController',
 	// draw() will call this with the normal canvas
 	// myDown will call this with the ghost canvas
 	function drawshape(context, shape, fill) {
-	console.log("drawshape called")
 	  context.fillStyle = fill;
 	//context.fillText("Hello World");  
 	  // We can skip the drawing of elements that have moved off the screen:
@@ -188,7 +185,6 @@ ipipalApp.controller('ItemController',
 	  clear(gctx);
 	  var l = boxes.length;
 	  for (var i = l-1; i >= 0; i--) {
-		  console.log(gctx)
 	    // draw shape onto ghost context
 	    drawshape(gctx, boxes[i], 'black');
 	    
@@ -229,7 +225,7 @@ ipipalApp.controller('ItemController',
 	  getMouse(e);
 	  // for this method width and height determine the starting X and Y, too.
 	  // so I left them as vars in case someone wanted to make them args for something and copy this code
-	  var width = 40;
+	  var width = 60;
 	  var height = 40;
 	  addRect(mx - (width / 2), my - (height / 2), width, height, '#FFC02B');
 	}

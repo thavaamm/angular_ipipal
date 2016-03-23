@@ -1,0 +1,32 @@
+{"items":[
+          { "x":200,
+            "y":200,
+            "width":60,
+            "height":40,
+            "name":"1",
+            "color":"#FFC02B"
+
+          },
+          { 
+            "x":25,
+            "y":25,
+            "width":60,
+            "height":40,
+            "name":"1",
+            "color":"#2BB8FF"
+             
+          },
+
+          {
+            "x":75,
+            "y":75,
+            "width":60,
+            "height":40,
+            "name":"1",
+            "color":"#ff00ff"
+
+          }
+
+        ]
+
+}
