@@ -1,0 +1,17 @@
+{
+
+  items=[
+          { 
+            boxname:"1",
+            boxcolor:"#dsafaf"
+
+          },
+          { 
+            boxname:"2",
+            boxcolor:"#dsafaf"
+            
+             
+          }    
+        ]
+
+}

@@ -1,8 +1,7 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="ipipalApp">
 <head>
-  <title>Bootstrap Example</title>
+  <title>ipipal Sample project</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -24,7 +23,9 @@ header, nav, section, article, footer
 <header>
   <h4>Sample ipipal Project</h4>
 </header>
+<ng-view></ng-view> 
 
+<!--
 <section>
     <div style="height:475px" id="container">
     <canvas id="canvas">
@@ -32,6 +33,7 @@ header, nav, section, article, footer
     </canvas>
     </div>
 </section>
+-->
 
 <footer>
 <p>&copy; 2016.</p>
@@ -41,12 +43,11 @@ header, nav, section, article, footer
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"></script>
+<!-- <script src="js/canvas.js"></script> -->
 <script src="js/app.js"></script>
 <script src="js/controllers/ItemController.js"></script>
-<script src="js/services/ItemService.js"></script>
-<script>
+<script src="js/services/Items.js"></script>
+<!-- <script>
 var canvas = document.querySelector('canvas');
 fitToContainer(canvas);
 
@@ -58,7 +59,7 @@ function fitToContainer(canvas){
   canvas.width  = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 }
-</script>
+</script> -->
 
-  </body>
+</body>
 </html>

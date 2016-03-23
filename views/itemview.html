@@ -1,4 +1,23 @@
-<div>
-  <h4>Item Detail of {{bizz.orgInfo.displayName}}</h4>
+<section>
+    <div style="height:475px" id="container">
+    <canvas id="canvas">
+    Your browser does not support HTML5 canvas.
+    </canvas>
+    </div>
+</section>
+<section>
+<label>Choose work area background color:</label><input id="background-color" type="color" onchange="javascript:document.getElementById('canvas').style.backgroundColor = document.getElementById('background-color').value;"/>
+</section>
+<script>
+var canvas = document.querySelector('canvas');
+fitToContainer(canvas);
 
-</div>
+function fitToContainer(canvas){
+  // Make it visually fill the positioned parent
+  canvas.style.width ='100%';
+  canvas.style.height='100%';
+  // ...then set the internal size to match
+  canvas.width  = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+</script>
