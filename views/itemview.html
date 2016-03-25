@@ -7,6 +7,9 @@
 </section>
 <section>
 <label>Choose work area background color:</label><input id="background-color" type="color" onchange="javascript:document.getElementById('canvas').style.backgroundColor = document.getElementById('background-color').value;"/>
+
+<button ng-click="delete()">Delete selcted item</button>
+
 </section>
 <script>
 var canvas = document.querySelector('canvas');

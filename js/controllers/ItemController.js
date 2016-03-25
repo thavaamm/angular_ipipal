@@ -47,6 +47,34 @@ ipipalApp.controller('ItemController',
 	}
 
 
+        $scope.delete = function(){
+
+            if(mySel != null){
+             boxes.splice(mySel.index,1);
+             invalidate();
+             var mouseMoveEvent = document.createEvent("MouseEvents");
+              mouseMoveEvent.initMouseEvent(
+                "mousemove", //event type : click, mousedown, mouseup, mouseover, mousemove, mouseout.  
+                true, //canBubble
+                false, //cancelable
+                window, //event's AbstractView : should be window 
+                1, // detail : Event's mouse click count 
+                50, // screenX
+                50, // screenY
+                50, // clientX
+                50, // clientY
+                false, // ctrlKey
+                false, // altKey
+                false, // shiftKey
+                false, // metaKey 
+                0, // button : 0 = click, 1 = middle button, 2 = right button  
+                null // relatedTarget : Only used with some event types (e.g. mouseover and mouseout). In other cases, pass null.
+              );
+              myDown(mouseMoveEvent);
+            }
+
+        }
+
 
 	 // when set to true, the canvas will redraw everything
 	 // invalidate() just sets this to false right now
@@ -138,6 +166,7 @@ ipipalApp.controller('ItemController',
 	    // draw selection
 	    // right now this is just a stroke along the edge of the selected box
 	    if (mySel != null) {
+console.log("test333");
 	      ctx.strokeStyle = mySelColor;
 	      ctx.lineWidth = mySelWidth;
 	      ctx.strokeRect(mySel.x,mySel.y,mySel.w,mySel.h);
@@ -195,6 +224,7 @@ ipipalApp.controller('ItemController',
 	    // if the mouse pixel exists, select and break
 	    if (imageData.data[3] > 0) {
 	      mySel = boxes[i];
+              mySel.index = i;
 	      offsetx = mx - mySel.x;
 	      offsety = my - mySel.y;
 	      mySel.x = mx - offsetx;
