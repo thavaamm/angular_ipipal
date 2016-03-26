@@ -3,7 +3,7 @@
             "y":200,
             "width":60,
             "height":40,
-            "name":"1",
+            "content":"box 1",
             "color":"#FFC02B"
 
           },
@@ -12,7 +12,7 @@
             "y":25,
             "width":60,
             "height":40,
-            "name":"1",
+            "content":"box 2",
             "color":"#2BB8FF"
              
           },
@@ -22,7 +22,7 @@
             "y":75,
             "width":60,
             "height":40,
-            "name":"1",
+            "content":"box 3",
             "color":"#ff00ff"
 
           }

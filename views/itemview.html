@@ -5,10 +5,12 @@
     </canvas>
     </div>
 </section>
-<section>
+<section ng-init="mySwitch=true">
 <label>Choose work area background color:</label><input id="background-color" type="color" onchange="javascript:document.getElementById('canvas').style.backgroundColor = document.getElementById('background-color').value;"/>
 
 <button ng-click="delete()">Delete selcted item</button>
+<input type="text" ng-disabled="mySwitch"  ng-change="refresh()" ng-model="boxes[selectedIndex].content"/>
+<input type="checkbox" ng-model="mySwitch"/>
 
 </section>
 <script>
