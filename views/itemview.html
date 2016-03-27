@@ -10,8 +10,7 @@
 
 <button ng-click="delete()">Delete selcted item</button>
 <input type="text" ng-disabled="mySwitch"  ng-change="refresh()" ng-model="boxes[selectedIndex].content"/>
-<input type="checkbox" ng-model="mySwitch"/>
-
+<!-- <pre>{{boxes|json}}</pre> -->
 </section>
 <script>
 var canvas = document.querySelector('canvas');

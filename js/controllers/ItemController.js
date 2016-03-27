@@ -56,6 +56,7 @@ ipipalApp.controller('ItemController',
 
             if(mySel != null){
              $scope.boxes.splice(mySel.index,1);
+             $scope.selectedIndex =0;
              invalidate();
              var mouseMoveEvent = document.createEvent("MouseEvents");
               mouseMoveEvent.initMouseEvent(
@@ -76,13 +77,18 @@ ipipalApp.controller('ItemController',
                 null // relatedTarget : Only used with some event types (e.g. mouseover and mouseout). In other cases, pass null.
               );
               myDown(mouseMoveEvent);
+              if($scope.boxes.length==0 || mySel== null){
+                $scope.mySwitch=true;
+              } 
+            }else{
+              alert('Please select any one of the box to delete.')
             }
 
         }
 
 
         $scope.refresh = function(){
-             if($scope.boxes.length>1){
+             if($scope.boxes.length>0){
              var mouseMoveEvent = document.createEvent("MouseEvents");
               mouseMoveEvent.initMouseEvent(
                 "mousemove", //event type : click, mousedown, mouseup, mouseover, mousemove, mouseout.
@@ -298,7 +304,6 @@ console.log("test333");
         var spl=2,fh=12;
 
 
-        console.log("boxIndex"+boxIndex) 
           textContent = "box test";
           if(boxIndex!='black'){
           var textContent = $scope.boxes[boxIndex].content;
@@ -617,7 +622,7 @@ console.log("test333");
                   mySel.index = i;
                   $scope.selectedIndex = mySel.index;
                   $scope.mySwitch=false;
-console.log("hellow 22=="+$scope.selectedIndex);
+                  $scope.$apply()
 		  offsetx = mx - mySel.x;
 		  offsety = my - mySel.y;
 		  mySel.x = mx - offsetx;
@@ -633,7 +638,6 @@ console.log("hellow 22=="+$scope.selectedIndex);
 	  // havent returned means we have selected nothing
 	  mySel = null;
         
-          console.log("test33333333"+$scope.mySwitch);  
           $scope.mySwitch=false; 
 	  // clear the ghost canvas for next time
 	  clear(gctx);
