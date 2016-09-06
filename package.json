@@ -1,0 +1,25 @@
+{
+  "name": "angular_ipipal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thavaamm/angular_ipipal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thavaamm/angular_ipipal/issues"
+  },
+  "homepage": "https://github.com/thavaamm/angular_ipipal#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "lodash": "^4.15.0",
+    "serve-index": "^1.8.0"
+  }
+}
